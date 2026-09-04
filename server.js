@@ -469,7 +469,6 @@ app.get("/api/server/logs", requireAuth, (req, res) => {
   const logs = getLogs(username);
   res.json({ logs });
 });
-
 // ========== ВЕБСОКЕТ ДЛЯ КОНСОЛИ ==========
 io.on("connection", (socket) => {
   const username = socket.handshake.auth.username;

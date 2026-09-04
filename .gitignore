@@ -1,0 +1,6 @@
+echo "node_modules/
+uploads/
+users/
+mcsv.db
+*.log
+.DS_Store" > .gitignore
