@@ -1,0 +1,44 @@
+[12:15:47] [Paper Plugin Remapper Thread - 1/INFO]: [ReobfServer] Remapping server...
+[12:15:51] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12:15:52] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
+[12:15:52] [ServerMain/INFO]: Found new data pack paper, loading it automatically
+[12:15:52] [ServerMain/INFO]: No existing world data, creating new world
+[12:15:52] [Paper Plugin Remapper Thread - 1/INFO]: [ReobfServer] Done remapping server in 4980ms.
+[12:15:52] [ServerMain/INFO]: Loaded 1175 recipes
+[12:15:53] [ServerMain/INFO]: Loaded 1276 advancements
+[12:15:53] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[12:15:53] [Server thread/WARN]: ****************************
+[12:15:53] [Server thread/WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
+[12:15:53] [Server thread/WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
+[12:15:53] [Server thread/WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
+[12:15:53] [Server thread/WARN]: ****************************
+[12:15:53] [Server thread/INFO]: Loading properties
+[12:15:53] [Server thread/INFO]: This server is running Paper version 1.20.6-151-ver/1.20.6@a4f0f5c (2024-10-30T19:13:22Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[12:15:54] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:15:54] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:15:54] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
+[12:15:54] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[12:15:54] [Server thread/INFO]: Default game type: SURVIVAL
+[12:15:54] [Server thread/INFO]: Generating keypair
+[12:15:54] [Server thread/INFO]: Starting Minecraft server on *:26479
+[12:15:54] [Server thread/INFO]: Using epoll channel type
+[12:15:54] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[12:15:54] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[12:15:54] [Server thread/INFO]: Preparing level "world"
+[12:16:01] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:16:05] [Server thread/INFO]: Time elapsed: 3940 ms
+[12:16:05] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[12:16:06] [Server thread/INFO]: Time elapsed: 1146 ms
+[12:16:06] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[12:16:06] [Server thread/INFO]: Time elapsed: 330 ms
+[12:16:06] [Server thread/INFO]: Running delayed init tasks
+[12:16:06] [Server thread/INFO]: Done (13.481s)! For help, type "help"
+[12:16:06] [Server thread/INFO]: *************************************************************************************
+[12:16:06] [Server thread/INFO]: This is the first time you're starting this server.
+[12:16:06] [Server thread/INFO]: It's recommended you read our 'Getting Started' documentation for guidance.
+[12:16:06] [Server thread/INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
+[12:16:06] [Server thread/INFO]: *************************************************************************************
+[12:16:06] [Server thread/INFO]: Timings Reset
+[12:22:20] [Server thread/INFO]: [Not Secure] [Server] hi

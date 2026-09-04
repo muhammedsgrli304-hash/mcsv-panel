@@ -1,26 +1,98 @@
-[2026-09-04T11:29:26.294Z] ✅ Скачан Paper 1.20.6
-[2026-09-04T11:29:42.510Z] 🚀 Сервер запущен на порту 36833
-[2026-09-04T11:29:42.554Z] Downloading mojang_1.20.6.jar
+[2026-09-04T12:15:30.902Z] ✅ Скачан Paper 1.20.6
+[2026-09-04T12:15:42.913Z] 🚀 Сервер запущен на порту 26479
+[2026-09-04T12:15:42.961Z] Downloading mojang_1.20.6.jar
 
-[2026-09-04T11:29:44.428Z] Applying patches
+[2026-09-04T12:15:45.391Z] Applying patches
 
-[2026-09-04T11:29:45.704Z] Starting org.bukkit.craftbukkit.Main
+[2026-09-04T12:15:46.651Z] Starting org.bukkit.craftbukkit.Main
 
-[2026-09-04T11:29:45.712Z] [ERROR] Exception in thread "ServerMain" 
-[2026-09-04T11:29:45.712Z] [ERROR] java.lang.UnsupportedClassVersionError: org/bukkit/craftbukkit/Main has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+[2026-09-04T12:15:46.861Z] [ERROR] *** Warning, you've not updated in a while! ***
 
-[2026-09-04T11:29:45.712Z] [ERROR] 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:469)
-	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:38)
-	at java.base/java.lang.Thread.run(Thread.java:840)
+[2026-09-04T12:15:46.861Z] [ERROR] *** Please download a new build as per instructions from https://papermc.io/downloads/paper ***
+
+[2026-09-04T12:15:46.871Z] System Info: Java 21 (OpenJDK 64-Bit Server VM 21.0.6+7-LTS) Host: Linux 6.1.43 (amd64)
+
+[2026-09-04T12:15:46.871Z] Loading libraries, please wait...
+
+[2026-09-04T12:15:46.997Z] WARN StatusConsoleListener Advanced terminal features are not available in this environment
+
+[2026-09-04T12:15:47.661Z] [12:15:47 INFO]: [ReobfServer] Remapping server...
+
+[2026-09-04T12:15:51.915Z] [12:15:51 INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+
+[2026-09-04T12:15:52.090Z] [12:15:52 INFO]: Found new data pack file/bukkit, loading it automatically
+
+[2026-09-04T12:15:52.092Z] [12:15:52 INFO]: Found new data pack paper, loading it automatically
+
+[2026-09-04T12:15:52.573Z] [12:15:52 INFO]: No existing world data, creating new world
+
+[2026-09-04T12:15:52.639Z] [12:15:52 INFO]: [ReobfServer] Done remapping server in 4980ms.
+
+[2026-09-04T12:15:52.988Z] [12:15:52 INFO]: Loaded 1175 recipes
+
+[2026-09-04T12:15:53.115Z] [12:15:53 INFO]: Loaded 1276 advancements
+
+[2026-09-04T12:15:53.288Z] [12:15:53 INFO]: Starting minecraft server version 1.20.6
+
+[2026-09-04T12:15:53.288Z] [12:15:53 WARN]: ****************************
+[12:15:53 WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
+[12:15:53 WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
+[12:15:53 WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
+
+[2026-09-04T12:15:53.288Z] [12:15:53 WARN]: ****************************
+[12:15:53 INFO]: Loading properties
+
+[2026-09-04T12:15:53.340Z] [12:15:53 INFO]: This server is running Paper version 1.20.6-151-ver/1.20.6@a4f0f5c (2024-10-30T19:13:22Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+
+[2026-09-04T12:15:54.001Z] [12:15:54 INFO]: Using 4 threads for Netty based IO
+
+[2026-09-04T12:15:54.002Z] [12:15:54 INFO]: Server Ping Player Sample Count: 12
+
+[2026-09-04T12:15:54.312Z] [12:15:54 INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
+
+[2026-09-04T12:15:54.339Z] [12:15:54 WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+
+[2026-09-04T12:15:54.497Z] [12:15:54 INFO]: Default game type: SURVIVAL
+
+[2026-09-04T12:15:54.497Z] [12:15:54 INFO]: Generating keypair
+
+[2026-09-04T12:15:54.577Z] [12:15:54 INFO]: Starting Minecraft server on *:26479
+
+[2026-09-04T12:15:54.625Z] [12:15:54 INFO]: Using epoll channel type
+
+[2026-09-04T12:15:54.638Z] [12:15:54 INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+
+[2026-09-04T12:15:54.638Z] [12:15:54 INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+
+[2026-09-04T12:15:54.660Z] [12:15:54 INFO]: Preparing level "world"
+
+[2026-09-04T12:16:01.320Z] [12:16:01 INFO]: Preparing start region for dimension minecraft:overworld
+
+[2026-09-04T12:16:05.261Z] [12:16:05 INFO]: Time elapsed: 3940 ms
+
+[2026-09-04T12:16:05.261Z] [12:16:05 INFO]: Preparing start region for dimension minecraft:the_nether
+
+[2026-09-04T12:16:06.408Z] [12:16:06 INFO]: Time elapsed: 1146 ms
+
+[2026-09-04T12:16:06.408Z] [12:16:06 INFO]: Preparing start region for dimension minecraft:the_end
+
+[2026-09-04T12:16:06.738Z] [12:16:06 INFO]: Time elapsed: 330 ms
+
+[2026-09-04T12:16:06.762Z] [12:16:06 INFO]: Running delayed init tasks
+
+[2026-09-04T12:16:06.763Z] [12:16:06 INFO]: Done (13.481s)! For help, type "help"
+
+[2026-09-04T12:16:06.764Z] [12:16:06 INFO]: *************************************************************************************
+
+[2026-09-04T12:16:06.764Z] [12:16:06 INFO]: This is the first time you're starting this server.
+[12:16:06 INFO]: It's recommended you read our 'Getting Started' documentation for guidance.
+[12:16:06 INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
+[12:16:06 INFO]: *************************************************************************************
+
+[2026-09-04T12:16:06.766Z] [12:16:06 INFO]: Timings Reset
+
+[2026-09-04T12:22:20.797Z] > say hi
+[2026-09-04T12:22:20.833Z] [12:22:20 INFO]: [Not Secure] [Server] hi
 

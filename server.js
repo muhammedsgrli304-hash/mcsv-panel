@@ -283,6 +283,7 @@ app.get("/api/check-auth", (req, res) => {
 });
 
 // ========== УПРАВЛЕНИЕ СЕРВЕРОМ ==========
+// ========== УПРАВЛЕНИЕ СЕРВЕРОМ ==========
 
 app.post("/api/server/create", requireAuth, async (req, res) => {
   const username = req.session.username;
@@ -298,7 +299,6 @@ app.post("/api/server/create", requireAuth, async (req, res) => {
   try {
     const port = generateRandomPort();
 
-    // Сохраняем в базу
     const stmt = db.prepare(`
             INSERT INTO servers (user_id, port, software, version, status)
             VALUES (?, ?, ?, ?, ?)
@@ -337,61 +337,6 @@ app.post("/api/server/start", requireAuth, async (req, res) => {
       .json({ error: "Сначала скачайте ядро (server.jar)" });
   }
 
-  // ===== ПРОВЕРКА НА JAVA =====
-  const hasJava = await checkJavaInstalled();
-
-  if (!hasJava) {
-    // === ДЕМО-РЕЖИМ: ИМИТИРУЕМ ЗАПУСК ===
-    console.log(`🔷 ДЕМО-РЕЖИМ: имитация запуска сервера для ${username}`);
-
-    // Имитируем процесс
-    const fakeProcess = {
-      pid: Math.floor(Math.random() * 10000),
-      stdin: { write: () => {} },
-      kill: () => {},
-      on: (event, callback) => {
-        if (event === "close") {
-          // Автоматически "останавливаем" через 30 секунд
-          setTimeout(() => {
-            callback(0);
-          }, 30000);
-        }
-      },
-    };
-
-    processes[username] = fakeProcess;
-
-    const stmt = db.prepare(
-      "UPDATE servers SET status = ?, pid = ? WHERE id = ?"
-    );
-    stmt.run("running", fakeProcess.pid, server.id);
-
-    appendLog(username, "🔷 ДЕМО-РЕЖИМ: Сервер запущен (имитация)");
-    appendLog(username, "⚠️ Настоящий запуск невозможен — Java не установлена");
-
-    // Отправляем логи в WebSocket
-    io.to(`user-${username}`).emit(
-      "log",
-      "🔷 ДЕМО-РЕЖИМ: Сервер запущен (имитация)"
-    );
-    io.to(`user-${username}`).emit(
-      "log",
-      "⚠️ Настоящий запуск невозможен — Java не установлена"
-    );
-    io.to(`user-${username}`).emit(
-      "log",
-      "📝 Это демонстрационный режим для тестирования панели"
-    );
-
-    res.json({
-      success: true,
-      message: "🔷 ДЕМО-РЕЖИМ: Сервер запущен (имитация)",
-      demo: true,
-    });
-    return;
-  }
-
-  // === РЕАЛЬНЫЙ ЗАПУСК (если Java есть) ===
   try {
     const propsPath = path.join(serverPath, "server.properties");
     if (!fs.existsSync(propsPath)) {
@@ -402,6 +347,9 @@ app.post("/api/server/start", requireAuth, async (req, res) => {
     if (!fs.existsSync(eulaPath)) {
       fs.writeFileSync(eulaPath, "eula=true\n", "utf8");
     }
+
+    // Сохраняем ID пользователя ДО запуска
+    const userId = server.user_id;
 
     const process = spawn("java", ["-jar", "server.jar", "nogui"], {
       cwd: serverPath,
@@ -434,7 +382,7 @@ app.post("/api/server/start", requireAuth, async (req, res) => {
       const stmt = db.prepare(
         "UPDATE servers SET status = ? WHERE user_id = ?"
       );
-      stmt.run("stopped", user.id);
+      stmt.run("stopped", userId); // ✅ ИСПОЛЬЗУЕМ userId
       appendLog(username, `⚠️ Сервер остановлен (код: ${code})`);
       io.to(`user-${username}`).emit("log", "⚠️ Сервер остановлен");
     });
@@ -445,26 +393,6 @@ app.post("/api/server/start", requireAuth, async (req, res) => {
     res.status(500).json({ error: "Ошибка при запуске" });
   }
 });
-
-// ===== ФУНКЦИЯ ПРОВЕРКИ JAVA =====
-async function checkJavaInstalled() {
-  return new Promise((resolve) => {
-    const check = spawn("java", ["-version"]);
-
-    check.on("error", () => {
-      resolve(false);
-    });
-
-    check.on("close", (code) => {
-      resolve(code === 0);
-    });
-
-    // Таймаут на случай зависания
-    setTimeout(() => {
-      resolve(false);
-    }, 3000);
-  });
-}
 
 app.post("/api/server/stop", requireAuth, (req, res) => {
   const username = req.session.username;
@@ -494,7 +422,6 @@ app.post("/api/server/restart", requireAuth, async (req, res) => {
     processes[username].stdin.write("stop\n");
     appendLog(username, "🔄 Перезапуск...");
 
-    // Ждем 5 секунд, затем запускаем снова
     setTimeout(async () => {
       try {
         await fetch(`http://localhost:${PORT}/api/server/start`, {
@@ -523,7 +450,6 @@ app.get("/api/server/status", requireAuth, (req, res) => {
 
   const isRunning = !!processes[username];
 
-  // Обновляем статус в БД, если изменился
   if (server.status === "running" && !isRunning) {
     const stmt = db.prepare("UPDATE servers SET status = ? WHERE id = ?");
     stmt.run("stopped", server.id);
