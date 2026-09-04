@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minecraft Hosting - Админ панель</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* стили без изменений */
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>MC Hosting</h2>
+        <div class="user-info" id="userInfo"></div>
+        <button onclick="window.location.href='/'">👤 Пользовательская панель</button>
+        <button class="logout-btn" onclick="logout()">🚪 Выйти</button>
+    </div>
+    
+    <div class="main">
+        <div class="admin-container">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h1>Админ панель</h1>
+                    <span class="admin-badge">Administrator</span>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="refresh-btn" onclick="loadUsers()">
+                        🔄 Обновить
+                    </button>
+                </div>
+            </div>
+            
+            <div class="stats-grid" id="stats">
+                <div class="stat-card">
+                    <div class="stat-label">Всего пользователей</div>
+                    <div class="stat-value" id="totalUsers">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Запущенных серверов</div>
+                    <div class="stat-value" id="runningServers">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Занято места</div>
+                    <div class="stat-value" id="totalSize">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Игроков онлайн</div>
+                    <div class="stat-value" id="onlinePlayers">0</div>
+                </div>
+            </div>
+            
+            <div class="users-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Пользователь</th>
+                            <th>Роль</th>
+                            <th>Дата регистрации</th>
+                            <th>Статус сервера</th>
+                            <th>Файлов</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersList">
+                        <tr>
+                            <td colspan="6" class="loading">Загрузка пользователей...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentUsername = '';
+        
+        // Проверка авторизации
+        fetch('/api/check-auth')
+            .then(res => res.json())
+            .then(data => {
+                if (!data.authenticated) {
+                    window.location.href = '/login.html';
+                } else if (data.role !== 'admin') {
+                    window.location.href = '/';
+                } else {
+                    currentUsername = data.username;
+                    document.getElementById('userInfo').innerHTML = `
+                        <div class="user-badge">
+                            <span class="user-icon">👑</span>
+                            ${data.username} (admin)
+                        </div>
+                    `;
+                    loadUsers();
+                    updateStats();
+                }
+            });
+        
+        async function loadUsers() {
+    const tbody = document.getElementById('usersList');
+    tbody.innerHTML = '<tr><td colspan="6" class="loading">Загрузка пользователей...</td></tr>';
+    
+    try {
+        const res = await fetch('/api/admin/users');
+        const users = await res.json();
+        
+        if (users.error) {
+            tbody.innerHTML = `<tr><td colspan="6" class="loading">Ошибка: ${users.error}</td></tr>`;
+            return;
+        }
+        
+        // Обновляем статистику
+        document.getElementById('totalUsers').textContent = users.length;
+        document.getElementById('runningServers').textContent = users.filter(u => u.serverRunning).length;
+        
+        if (users.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" class="loading">Нет пользователей</td></tr>';
+            return;
+        }
+        
+        tbody.innerHTML = users.map(user => `
+            <tr id="user-${user.username}">
+                <td><strong>${user.username}</strong></td>
+                <td>${user.role === 'admin' ? '👑 Админ' : '👤 Пользователь'}</td>
+                <td>${user.createdAt ? new Date(user.createdAt).toLocaleString() : 'Неизвестно'}</td>
+                <td>
+                    <span class="status-badge ${user.serverRunning ? 'status-running' : 'status-stopped'}">
+                        ${user.serverRunning ? '🟢 Запущен' : '🔴 Остановлен'}
+                    </span>
+                </td>
+                <td>${user.filesCount || 0} файлов</td>
+                <td>
+                    <div class="user-actions">
+                        ${user.username !== 'admin' ? `
+                            ${user.serverRunning ? `
+                                <button class="action-btn stop-btn" onclick="stopServer('${user.username}')">
+                                    ⏹️ Стоп
+                                </button>
+                            ` : ''}
+                            <button class="action-btn delete-btn" onclick="deleteUser('${user.username}')">
+                                🗑️ Удалить
+                            </button>
+                        ` : '<span style="color: #6b7280;">Недоступно</span>'}
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+        
+    } catch (error) {
+        console.error("Ошибка загрузки:", error);
+        tbody.innerHTML = '<tr><td colspan="6" class="loading">Ошибка загрузки</td></tr>';
+    }
+}
+        
+        function updateStats() {
+            // Простая статистика из таблицы
+            const totalUsers = document.querySelectorAll('#usersList tr').length;
+            // Остальное обновится в loadUsers
+        }
+        
+        async function stopServer(username) {
+            if (!confirm(`Остановить сервер пользователя ${username}?`)) return;
+            
+            try {
+                const res = await fetch('/api/admin/stop-server', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username })
+                });
+                
+                const data = await res.json();
+                
+                if (data.success) {
+                    alert('Сервер останавливается');
+                    loadUsers();
+                } else {
+                    alert('Ошибка: ' + data.message);
+                }
+            } catch (error) {
+                alert('Ошибка при остановке сервера');
+            }
+        }
+        
+        async function deleteUser(username) {
+    if (!confirm(`⚠️ Удалить пользователя ${username}?`)) {
+        return;
+    }
+    
+    // Показываем индикатор загрузки на кнопке
+    const deleteBtn = event.target;
+    const originalText = deleteBtn.textContent;
+    deleteBtn.textContent = '⏳ Удаление...';
+    deleteBtn.disabled = true;
+    
+    try {
+        const res = await fetch('/api/admin/delete-user', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+            // Немедленно удаляем строку из таблицы
+            const row = document.getElementById(`user-${username}`);
+            if (row) {
+                row.remove();
+            }
+            
+            // Обновляем статистику
+            document.getElementById('totalUsers').textContent = 
+                parseInt(document.getElementById('totalUsers').textContent) - 1;
+            
+            alert(`✅ Пользователь ${username} удален!`);
+        } else {
+            alert('❌ Ошибка: ' + (data.error || 'Неизвестная ошибка'));
+            // Возвращаем кнопку в исходное состояние
+            deleteBtn.textContent = originalText;
+            deleteBtn.disabled = false;
+        }
+    } catch (error) {
+        console.error("Ошибка при удалении пользователя:", error);
+        alert('❌ Ошибка при удалении пользователя');
+        deleteBtn.textContent = originalText;
+        deleteBtn.disabled = false;
+    }
+}
+        
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = '/login.html';
+        }
+        
+        // Обновляем каждые 10 секунд
+        setInterval(() => {
+            if (document.visibilityState === 'visible') {
+                loadUsers();
+            }
+        }, 10000);
+    </script>
+</body>
+</html>

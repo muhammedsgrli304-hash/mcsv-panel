@@ -1,0 +1,26 @@
+[2026-09-04T11:29:26.294Z] ✅ Скачан Paper 1.20.6
+[2026-09-04T11:29:42.510Z] 🚀 Сервер запущен на порту 36833
+[2026-09-04T11:29:42.554Z] Downloading mojang_1.20.6.jar
+
+[2026-09-04T11:29:44.428Z] Applying patches
+
+[2026-09-04T11:29:45.704Z] Starting org.bukkit.craftbukkit.Main
+
+[2026-09-04T11:29:45.712Z] [ERROR] Exception in thread "ServerMain" 
+[2026-09-04T11:29:45.712Z] [ERROR] java.lang.UnsupportedClassVersionError: org/bukkit/craftbukkit/Main has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+
+[2026-09-04T11:29:45.712Z] [ERROR] 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
+	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
+	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:469)
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:38)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+

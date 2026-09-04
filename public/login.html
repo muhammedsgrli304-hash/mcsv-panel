@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minecraft Hosting - Вход</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #0b0c15, #1a1f2f);
+        }
+        
+        .auth-container {
+            background: rgba(10, 12, 22, 0.95);
+            border: 1px solid #2a2f4f;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 50px rgba(124, 58, 237, 0.3);
+            animation: glow 3s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 30px rgba(124, 58, 237, 0.3); }
+            to { box-shadow: 0 0 60px rgba(124, 58, 237, 0.6); }
+        }
+        
+        .auth-container h1 {
+            text-align: center;
+            color: #c8b3ff;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .auth-container h2 {
+            color: #b5b9ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid #3d3f6e;
+            color: #b5b9ff;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        
+        .auth-tab.active {
+            background: #7c3aed;
+            border-color: #8a6dff;
+            color: white;
+            box-shadow: 0 0 20px #7c3aed;
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b5b9ff;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0f1322;
+            border: 1px solid #2d325a;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #8a6dff;
+            box-shadow: 0 0 15px #4834d4;
+        }
+        
+        .auth-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(145deg, #5f3bff, #7d5fff);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .auth-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 30px #7d5fff;
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 30px;
+            text-align: center;
+            display: none;
+        }
+        
+        .message.error {
+            background: #dc2626;
+            color: white;
+            display: block;
+        }
+        
+        .message.success {
+            background: #10b981;
+            color: white;
+            display: block;
+        }
+        
+        .minecraft-icon {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px #7c3aed);
+        }
+        
+        .password-requirements {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="minecraft-icon">⛏️</div>
+        <h1>Minecraft Hosting</h1>
+        
+        <div class="auth-tabs">
+            <button class="auth-tab active" onclick="switchTab('login')">Вход</button>
+            <button class="auth-tab" onclick="switchTab('register')">Регистрация</button>
+        </div>
+        
+        <!-- Форма входа -->
+        <div id="loginForm" class="auth-form active">
+            <h2>Вход в аккаунт</h2>
+            <div class="form-group">
+                <label>Имя пользователя</label>
+                <input type="text" id="loginUsername" placeholder="Введите имя...">
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="loginPassword" placeholder="Введите пароль...">
+            </div>
+            <button class="auth-button" onclick="login()">Войти</button>
+        </div>
+        
+        <!-- Форма регистрации -->
+        <div id="registerForm" class="auth-form">
+            <h2>Регистрация</h2>
+            <div class="form-group">
+                <label>Имя пользователя</label>
+                <input type="text" id="registerUsername" placeholder="Минимум 3 символа...">
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="registerPassword" placeholder="Минимум 6 символов...">
+            </div>
+            <div class="form-group">
+                <label>Подтверждение пароля</label>
+                <input type="password" id="registerConfirmPassword" placeholder="Повторите пароль...">
+            </div>
+            <div class="password-requirements">
+                • Пароль должен содержать минимум 6 символов
+            </div>
+            <button class="auth-button" onclick="register()">Зарегистрироваться</button>
+        </div>
+        
+        <div id="message" class="message"></div>
+    </div>
+    
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+            
+            if (tab === 'login') {
+                document.querySelector('.auth-tab:first-child').classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else {
+                document.querySelector('.auth-tab:last-child').classList.add('active');
+                document.getElementById('registerForm').classList.add('active');
+            }
+            
+            document.getElementById('message').style.display = 'none';
+        }
+        
+        async function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const messageDiv = document.getElementById('message');
+            
+            if (!username || !password) {
+                showMessage('Заполните все поля', 'error');
+                return;
+            }
+            
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                const data = await res.json();
+                
+                if (data.success) {
+                    showMessage('Вход выполнен! Перенаправление...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1000);
+                } else {
+                    showMessage(data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Ошибка соединения', 'error');
+            }
+        }
+        
+        async function register() {
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('registerConfirmPassword').value;
+            const messageDiv = document.getElementById('message');
+            
+            if (!username || !password || !confirmPassword) {
+                showMessage('Заполните все поля', 'error');
+                return;
+            }
+            
+            if (username.length < 3) {
+                showMessage('Имя пользователя должно быть минимум 3 символа', 'error');
+                return;
+            }
+            
+            if (password.length < 6) {
+                showMessage('Пароль должен быть минимум 6 символов', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showMessage('Пароли не совпадают', 'error');
+                return;
+            }
+            
+            try {
+                const res = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                const data = await res.json();
+                
+                if (data.success) {
+                    showMessage('Регистрация успешна! Теперь можно войти', 'success');
+                    setTimeout(() => {
+                        switchTab('login');
+                    }, 2000);
+                } else {
+                    showMessage(data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Ошибка соединения', 'error');
+            }
+        }
+        
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+        }
+        
+        // Проверяем, не авторизован ли пользователь уже
+        fetch('/api/check-auth')
+            .then(res => res.json())
+            .then(data => {
+                if (data.authenticated) {
+                    window.location.href = '/';
+                }
+            });
+    </script>
+</body>
+</html>

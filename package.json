@@ -1,14 +1,24 @@
 {
-  "name": "nodejs-sandbox",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "mcsv-panel",
+  "version": "2.0.0",
+  "description": "Простая панель управления Minecraft серверами",
+  "main": "server.js",
   "scripts": {
-    "start": "node --watch index.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^1.20.0",
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.22.2",
+    "express-session": "^1.19.0",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.3",
+    "unzipper": "^0.10.14"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
