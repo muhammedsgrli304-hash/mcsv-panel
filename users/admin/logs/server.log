@@ -1,169 +1,169 @@
-[2026-09-04T12:33:44.136Z] ✅ Скачан Paper 1.21.11
-[2026-09-04T12:33:47.703Z] 🚀 Сервер запущен на порту 34613
-[2026-09-04T12:33:48.217Z] Downloading mojang_1.21.11.jar
+[2026-09-04T13:32:03.057Z] ✅ Скачан Paper 1.21.11
+[2026-09-04T13:32:10.091Z] 🚀 Сервер запущен на порту 47121
+[2026-09-04T13:32:10.143Z] Downloading mojang_1.21.11.jar
 
-[2026-09-04T12:33:52.653Z] Applying patches
+[2026-09-04T13:32:13.875Z] Applying patches
 
-[2026-09-04T12:33:54.190Z] Starting org.bukkit.craftbukkit.Main
+[2026-09-04T13:32:15.367Z] Starting org.bukkit.craftbukkit.Main
 
-[2026-09-04T12:33:55.428Z] [ERROR] 2026-09-04T12:33:55.427513738Z ServerMain WARN Advanced terminal features are not available in this environment
+[2026-09-04T13:32:15.711Z] [ERROR] 2026-09-04T13:32:15.710074332Z ServerMain WARN Advanced terminal features are not available in this environment
 
-[2026-09-04T12:33:55.905Z] [12:33:55 INFO]: [bootstrap] Running Java 21 (OpenJDK 64-Bit Server VM 21.0.6+7-LTS; Eclipse Adoptium Temurin-21.0.6+7) on Linux 6.1.43 (amd64)
+[2026-09-04T13:32:15.903Z] [13:32:15 INFO]: [bootstrap] Running Java 21 (OpenJDK 64-Bit Server VM 21.0.6+7-LTS; Eclipse Adoptium Temurin-21.0.6+7) on Linux 6.1.43 (amd64)
 
-[2026-09-04T12:33:55.906Z] [12:33:55 INFO]: [bootstrap] Loading Paper 1.21.11-116-main@6f71be8 (2026-02-15T19:11:22Z) for Minecraft 1.21.11
+[2026-09-04T13:32:15.904Z] [13:32:15 INFO]: [bootstrap] Loading Paper 1.21.11-116-main@6f71be8 (2026-02-15T19:11:22Z) for Minecraft 1.21.11
 
-[2026-09-04T12:33:56.170Z] [12:33:56 INFO]: [PluginInitializerManager] Initializing plugins...
+[2026-09-04T13:32:16.060Z] [13:32:16 INFO]: [PluginInitializerManager] Initializing plugins...
 
-[2026-09-04T12:33:56.453Z] [12:33:56 INFO]: [PluginInitializerManager] Initialized 0 plugins
+[2026-09-04T13:32:16.147Z] [13:32:16 INFO]: [PluginInitializerManager] Initialized 0 plugins
 
-[2026-09-04T12:33:56.672Z] [12:33:56 INFO]: [ReobfServer] Remapping server...
+[2026-09-04T13:32:16.923Z] [13:32:16 INFO]: [ReobfServer] Remapping server...
 
-[2026-09-04T12:34:03.787Z] [12:34:03 INFO]: [ReobfServer] Done remapping server in 7114ms.
+[2026-09-04T13:32:21.132Z] [13:32:21 INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
 
-[2026-09-04T12:34:03.829Z] [12:34:03 INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[2026-09-04T13:32:21.414Z] [13:32:21 INFO]: Found new data pack file/bukkit, loading it automatically
 
-[2026-09-04T12:34:03.948Z] [12:34:03 INFO]: Found new data pack file/bukkit, loading it automatically
+[2026-09-04T13:32:21.414Z] [13:32:21 INFO]: Found new data pack paper, loading it automatically
 
-[2026-09-04T12:34:03.949Z] [12:34:03 INFO]: Found new data pack paper, loading it automatically
+[2026-09-04T13:32:21.995Z] [13:32:21 INFO]: No existing world data, creating new world
 
-[2026-09-04T12:34:04.376Z] [12:34:04 INFO]: No existing world data, creating new world
+[2026-09-04T13:32:22.559Z] [13:32:22 INFO]: [ReobfServer] Done remapping server in 5637ms.
 
-[2026-09-04T12:34:05.117Z] [12:34:05 INFO]: Loaded 1470 recipes
+[2026-09-04T13:32:22.672Z] [13:32:22 INFO]: Loaded 1470 recipes
 
-[2026-09-04T12:34:05.137Z] [12:34:05 INFO]: Loaded 1584 advancements
+[2026-09-04T13:32:22.681Z] [13:32:22 INFO]: Loaded 1584 advancements
 
-[2026-09-04T12:34:05.160Z] [12:34:05 INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[2026-09-04T13:32:22.701Z] [13:32:22 INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
 
-[2026-09-04T12:34:05.438Z] [12:34:05 INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 277.9ms
+[2026-09-04T13:32:22.967Z] [13:32:22 INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 265.2ms
 
-[2026-09-04T12:34:05.525Z] [12:34:05 INFO]: Starting minecraft server version 1.21.11
+[2026-09-04T13:32:23.065Z] [13:32:23 INFO]: Starting minecraft server version 1.21.11
 
-[2026-09-04T12:34:05.525Z] [12:34:05 WARN]: ****************************
-[12:34:05 WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
-[12:34:05 WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
-[12:34:05 WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
-[12:34:05 WARN]: ****************************
-[12:34:05 INFO]: Loading properties
+[2026-09-04T13:32:23.065Z] [13:32:23 WARN]: ****************************
+[13:32:23 WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
+[13:32:23 WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
+[13:32:23 WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
+[13:32:23 WARN]: ****************************
+[13:32:23 INFO]: Loading properties
 
-[2026-09-04T12:34:05.581Z] [12:34:05 INFO]: This server is running Paper version 1.21.11-116-main@6f71be8 (2026-02-15T19:11:22Z) (Implementing API version 1.21.11-R0.1-SNAPSHOT)
+[2026-09-04T13:32:23.121Z] [13:32:23 INFO]: This server is running Paper version 1.21.11-116-main@6f71be8 (2026-02-15T19:11:22Z) (Implementing API version 1.21.11-R0.1-SNAPSHOT)
 
-[2026-09-04T12:34:05.626Z] [12:34:05 INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[2026-09-04T13:32:23.176Z] [13:32:23 INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
 
-[2026-09-04T12:34:05.670Z] [12:34:05 INFO]: Server Ping Player Sample Count: 12
+[2026-09-04T13:32:23.224Z] [13:32:23 INFO]: Server Ping Player Sample Count: 12
 
-[2026-09-04T12:34:05.671Z] [12:34:05 INFO]: Using 4 threads for Netty based IO
+[2026-09-04T13:32:23.230Z] [13:32:23 INFO]: Using 4 threads for Netty based IO
 
-[2026-09-04T12:34:06.075Z] [12:34:06 INFO]: [MoonriseCommon] Paper is using 1 worker threads, 1 I/O threads
+[2026-09-04T13:32:23.732Z] [13:32:23 INFO]: [MoonriseCommon] Paper is using 1 worker threads, 1 I/O threads
 
-[2026-09-04T12:34:06.281Z] [12:34:06 INFO]: Default game type: SURVIVAL
+[2026-09-04T13:32:23.905Z] [13:32:23 INFO]: Default game type: SURVIVAL
+[13:32:23 INFO]: Generating keypair
 
-[2026-09-04T12:34:06.281Z] [12:34:06 INFO]: Generating keypair
+[2026-09-04T13:32:23.917Z] [13:32:23 INFO]: Starting Minecraft server on *:47121
 
-[2026-09-04T12:34:06.310Z] [12:34:06 INFO]: Starting Minecraft server on *:34613
+[2026-09-04T13:32:23.958Z] [13:32:23 INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
 
-[2026-09-04T12:34:06.374Z] [12:34:06 INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[2026-09-04T13:32:23.958Z] [13:32:23 INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
 
-[2026-09-04T12:34:06.375Z] [12:34:06 INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[2026-09-04T13:32:24.010Z] [13:32:24 INFO]: Preparing level "world"
 
-[2026-09-04T12:34:06.422Z] [12:34:06 INFO]: Preparing level "world"
+[2026-09-04T13:32:24.095Z] [13:32:24 INFO]: [ca.spottedleaf.moonrise.common.util.MoonriseConstants] NUMA enable flag is not set; however there is NUMA interaction support for this OS.
 
-[2026-09-04T12:34:06.530Z] [12:34:06 INFO]: [ca.spottedleaf.moonrise.common.util.MoonriseConstants] NUMA enable flag is not set; however there is NUMA interaction support for this OS.
+[2026-09-04T13:32:24.096Z] [13:32:24 INFO]: [ca.spottedleaf.moonrise.common.util.MoonriseConstants] Detected 1 NUMA nodes.
 
-[2026-09-04T12:34:06.530Z] [12:34:06 INFO]: [ca.spottedleaf.moonrise.common.util.MoonriseConstants] Detected 1 NUMA nodes.
+[2026-09-04T13:32:24.292Z] [13:32:24 INFO]: Selecting spawn point for world 'minecraft:overworld'...
 
-[2026-09-04T12:34:06.689Z] [12:34:06 INFO]: Selecting spawn point for world 'minecraft:overworld'...
+[2026-09-04T13:32:30.129Z] [13:32:30 INFO]: Selecting spawn point for world 'minecraft:the_nether'...
 
-[2026-09-04T12:34:13.715Z] [12:34:13 INFO]: Selecting spawn point for world 'minecraft:the_nether'...
+[2026-09-04T13:32:30.720Z] [13:32:30 INFO]: Selecting spawn point for world 'minecraft:the_end'...
 
-[2026-09-04T12:34:14.304Z] [12:34:14 INFO]: Selecting spawn point for world 'minecraft:the_end'...
+[2026-09-04T13:32:30.964Z] [13:32:30 INFO]: Loading 0 persistent chunks for world 'minecraft:overworld'...
 
-[2026-09-04T12:34:14.518Z] [12:34:14 INFO]: Loading 0 persistent chunks for world 'minecraft:overworld'...
+[2026-09-04T13:32:30.965Z] [13:32:30 INFO]: Preparing spawn area: 100%
 
-[2026-09-04T12:34:14.518Z] [12:34:14 INFO]: Preparing spawn area: 100%
+[2026-09-04T13:32:31.006Z] [13:32:31 INFO]: Prepared spawn area in 6714 ms
 
-[2026-09-04T12:34:14.524Z] [12:34:14 INFO]: Prepared spawn area in 7835 ms
+[2026-09-04T13:32:31.008Z] [13:32:31 INFO]: Loading 0 persistent chunks for world 'minecraft:the_nether'...
 
-[2026-09-04T12:34:14.525Z] [12:34:14 INFO]: Loading 0 persistent chunks for world 'minecraft:the_nether'...
+[2026-09-04T13:32:31.008Z] [13:32:31 INFO]: Preparing spawn area: 100%
 
-[2026-09-04T12:34:14.525Z] [12:34:14 INFO]: Preparing spawn area: 100%
-[12:34:14 INFO]: Prepared spawn area in 810 ms
+[2026-09-04T13:32:31.009Z] [13:32:31 INFO]: Prepared spawn area in 880 ms
 
-[2026-09-04T12:34:14.525Z] [12:34:14 INFO]: Loading 0 persistent chunks for world 'minecraft:the_end'...
-[12:34:14 INFO]: Preparing spawn area: 100%
-[12:34:14 INFO]: Prepared spawn area in 222 ms
+[2026-09-04T13:32:31.010Z] [13:32:31 INFO]: Loading 0 persistent chunks for world 'minecraft:the_end'...
 
-[2026-09-04T12:34:14.526Z] [12:34:14 INFO]: Done preparing level "world" (8.103s)
+[2026-09-04T13:32:31.011Z] [13:32:31 INFO]: Preparing spawn area: 100%
 
-[2026-09-04T12:34:14.632Z] [12:34:14 INFO]: [spark] Starting background profiler...
+[2026-09-04T13:32:31.015Z] [13:32:31 INFO]: Prepared spawn area in 295 ms
+[13:32:31 INFO]: Done preparing level "world" (7.005s)
 
-[2026-09-04T12:34:14.910Z] [12:34:14 INFO]: Running delayed init tasks
+[2026-09-04T13:32:31.099Z] [13:32:31 INFO]: [spark] Starting background profiler...
 
-[2026-09-04T12:34:14.911Z] [12:34:14 INFO]: Done (20.695s)! For help, type "help"
+[2026-09-04T13:32:31.232Z] [13:32:31 INFO]: Running delayed init tasks
 
-[2026-09-04T12:34:14.911Z] [12:34:14 INFO]: *************************************************************************************
+[2026-09-04T13:32:31.240Z] [13:32:31 INFO]: Done (15.844s)! For help, type "help"
 
-[2026-09-04T12:34:14.912Z] [12:34:14 INFO]: This is the first time you're starting this server.
+[2026-09-04T13:32:31.243Z] [13:32:31 INFO]: *************************************************************************************
+[13:32:31 INFO]: This is the first time you're starting this server.
+[13:32:31 INFO]: It's recommended you read our 'Getting Started' documentation for guidance.
+[13:32:31 INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
+[13:32:31 INFO]: *************************************************************************************
 
-[2026-09-04T12:34:14.912Z] [12:34:14 INFO]: It's recommended you read our 'Getting Started' documentation for guidance.
+[2026-09-04T13:32:31.458Z] [13:32:31 WARN]: *** You are running an outdated version of Minecraft, which is 4 release(s) and 16 build(s) behind!
 
-[2026-09-04T12:34:14.912Z] [12:34:14 INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
+[2026-09-04T13:32:31.459Z] [13:32:31 WARN]: *** Please update to the latest stable version on https://papermc.io/downloads/paper ***
 
-[2026-09-04T12:34:14.913Z] [12:34:14 INFO]: *************************************************************************************
+[2026-09-04T13:47:25.199Z] ⏹️ Команда остановки отправлена
+[2026-09-04T13:47:25.254Z] [13:47:25 INFO]: Stopping the server
 
-[2026-09-04T12:34:15.003Z] [12:34:15 WARN]: *** You are running an outdated version of Minecraft, which is 4 release(s) and 16 build(s) behind!
+[2026-09-04T13:47:25.280Z] [13:47:25 INFO]: Stopping server
 
-[2026-09-04T12:34:15.004Z] [12:34:15 WARN]: *** Please update to the latest stable version on https://papermc.io/downloads/paper ***
+[2026-09-04T13:47:25.283Z] [13:47:25 INFO]: Saving players
 
-[2026-09-04T12:59:06.401Z] ⏹️ Команда остановки отправлена
-[2026-09-04T12:59:06.432Z] [12:59:06 INFO]: Stopping the server
+[2026-09-04T13:47:25.384Z] [13:47:25 INFO]: Saving worlds
 
-[2026-09-04T12:59:06.458Z] [12:59:06 INFO]: Stopping server
+[2026-09-04T13:47:25.384Z] [13:47:25 INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
 
-[2026-09-04T12:59:06.463Z] [12:59:06 INFO]: Saving players
+[2026-09-04T13:47:25.391Z] [13:47:25 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
 
-[2026-09-04T12:59:06.564Z] [12:59:06 INFO]: Saving worlds
+[2026-09-04T13:47:25.391Z] [13:47:25 INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[13:47:25 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
 
-[2026-09-04T12:59:06.564Z] [12:59:06 INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[2026-09-04T13:47:25.395Z] [13:47:25 INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world' in 0.00s
 
-[2026-09-04T12:59:06.574Z] [12:59:06 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[2026-09-04T13:47:25.395Z] [13:47:25 INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world'
 
-[2026-09-04T12:59:06.574Z] [12:59:06 INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[12:59:06 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[2026-09-04T13:47:25.395Z] [13:47:25 INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world'
 
-[2026-09-04T12:59:06.577Z] [12:59:06 INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world' in 0.00s
+[2026-09-04T13:47:25.409Z] [13:47:25 INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
 
-[2026-09-04T12:59:06.577Z] [12:59:06 INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world'
-[12:59:06 INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world'
+[2026-09-04T13:47:25.415Z] [13:47:25 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
 
-[2026-09-04T12:59:06.589Z] [12:59:06 INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[2026-09-04T13:47:25.415Z] [13:47:25 INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[13:47:25 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
 
-[2026-09-04T12:59:06.593Z] [12:59:06 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[2026-09-04T13:47:25.415Z] [13:47:25 INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_nether' in 0.00s
+[13:47:25 INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_nether'
+[13:47:25 INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_nether'
 
-[2026-09-04T12:59:06.593Z] [12:59:06 INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[12:59:06 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[12:59:06 INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_nether' in 0.00s
-[12:59:06 INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_nether'
-[12:59:06 INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_nether'
+[2026-09-04T13:47:25.424Z] [13:47:25 INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
 
-[2026-09-04T12:59:06.603Z] [12:59:06 INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[2026-09-04T13:47:25.430Z] [13:47:25 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[13:47:25 INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[13:47:25 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[13:47:25 INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0.00s
+[13:47:25 INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_the_end'
 
-[2026-09-04T12:59:06.612Z] [12:59:06 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[2026-09-04T13:47:25.430Z] [13:47:25 INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_the_end'
 
-[2026-09-04T12:59:06.612Z] [12:59:06 INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[12:59:06 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[12:59:06 INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0.00s
-[12:59:06 INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_the_end'
-[12:59:06 INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_the_end'
+[2026-09-04T13:47:25.439Z] [13:47:25 INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
 
-[2026-09-04T12:59:06.623Z] [12:59:06 INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[12:59:06 INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[12:59:06 INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[2026-09-04T13:47:25.440Z] [13:47:25 INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[13:47:25 INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[13:47:25 INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
 
-[2026-09-04T12:59:06.623Z] [12:59:06 INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[2026-09-04T13:47:25.440Z] [13:47:25 INFO]: Waiting for all RegionFile I/O tasks to complete...
+[13:47:25 INFO]: All RegionFile I/O tasks to complete
 
-[2026-09-04T12:59:06.624Z] [12:59:06 INFO]: Waiting for all RegionFile I/O tasks to complete...
-[12:59:06 INFO]: All RegionFile I/O tasks to complete
-[12:59:06 INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
-[12:59:06 INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[2026-09-04T13:47:25.441Z] [13:47:25 INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[13:47:25 INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
 
-[2026-09-04T12:59:07.010Z] ⚠️ Сервер остановлен (код: 0)
+[2026-09-04T13:47:25.835Z] ⚠️ Сервер остановлен (код: 0)
